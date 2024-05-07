@@ -17,6 +17,30 @@ class PrettyBlocObserver extends BlocObserver {
     }
   }
 
+  @override
+  void onError(BlocBase bloc, Object error, StackTrace stackTrace) {
+    super.onError(bloc, error, stackTrace);
+    if (kDebugMode) {
+      _printBoxed(header: 'onError ══ ${bloc.runtimeType}', text: '$error');
+    }
+  }
+
+  @override
+  void onClose(BlocBase bloc) {
+    super.onClose(bloc);
+    if (kDebugMode) {
+      _printBoxed(header: 'onClosed ══ ${bloc.runtimeType}');
+    }
+  }
+
+  @override
+  void onCreate(BlocBase bloc) {
+    super.onCreate(bloc);
+    if (kDebugMode) {
+      _printBoxed(header: 'onCreated ══ ${bloc.runtimeType}');
+    }
+  }
+
   void _printBoxed({String? header, String? text}) {
     logPrint('');
     logPrint('╔╣ $header');
@@ -61,4 +85,3 @@ class PrettyBlocObserver extends BlocObserver {
     return lines;
   }
 }
-

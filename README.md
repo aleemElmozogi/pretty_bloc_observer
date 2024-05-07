@@ -11,7 +11,17 @@ Pretty Bloc Observer is a Flutter package that provides a Bloc observer for prin
 
 How it looks like
 
-![Example Image](images/example.png)
+On Change event
+![Example Image](images/on_change.png)
+
+On Create event
+![Example Image](images/on_create.png)
+
+On Close event
+![Example Image](images/on_close.png)
+
+On Error event
+![Example Image](images/on_error.png)
 
 ## Installation
 
@@ -19,7 +29,7 @@ To use Pretty Bloc Observer in your Flutter project, add the following to your `
 
 ```yaml
 dependencies:
-  pretty_bloc_observer: ^1.0.0
+  pretty_bloc_observer: ^1.0.2
 ```
 
 Then run `flutter pub get` to install the package.
