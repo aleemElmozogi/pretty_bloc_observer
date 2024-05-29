@@ -66,21 +66,18 @@ class PrettyBlocObserver extends BlocObserver {
   List<String> _splitLinesIfNeeded(String text) {
     final List<String> lines = [];
     int start = 0;
-    for (int i = 0; i < text.length; i++) {
-      if (i - start >= maxWidth || i == text.length - 1) {
-        if (i == text.length - 1) {
-          lines.add(text.substring(start, i + 1));
-        } else {
-          final int endIndex = text.lastIndexOf(', ', i);
-          if (endIndex == -1) {
-            lines.add(text.substring(start, i + 1));
-            start = i + 1;
-          } else {
-            lines.add(text.substring(start, endIndex));
-            start = endIndex + 1;
-          }
+    while (start < text.length) {
+      int end = start + maxWidth;
+      if (end >= text.length) {
+        end = text.length;
+      } else {
+        int lastSpace = text.lastIndexOf(', ', end);
+        if (lastSpace > start) {
+          end = lastSpace + 1;
         }
       }
+      lines.add(text.substring(start, end).trim());
+      start = end;
     }
     return lines;
   }
