@@ -1,17 +1,16 @@
 name: pretty_bloc_observer
 description: "Pretty Bloc Observer is a Flutter package that provides a Bloc observer for printing Bloc and Cubit state changes in a formatted and visually appealing way."
-version: 1.0.2
+version: 1.0.3
 homepage: https://github.com/aleemElmozogi/pretty_bloc_observer
 
 environment:
-  sdk: '>=3.3.4 <4.0.0'
+  sdk: '>=3.0.0 <4.0.0'
   flutter: ">=1.17.0"
 
 dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.5
-
 
 dev_dependencies:
   flutter_test:
