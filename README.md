@@ -29,7 +29,7 @@ To use Pretty Bloc Observer in your Flutter project, add the following to your `
 
 ```yaml
 dependencies:
-  pretty_bloc_observer: ^1.0.2
+  pretty_bloc_observer: ^1.0.3
 ```
 
 Then run `flutter pub get` to install the package.
